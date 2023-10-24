@@ -2,78 +2,97 @@
 @use "index";
 @use "public";
 @use "about";
+@use "team";
 
 main {
   min-height: 100vh;
 
-  .employee {
-    @media screen and (min-width: 768px) {
-      display: flex;
-      flex-direction: row;
-      margin-top: 60px;
-    }
-    &__photo {
-      img {
-        width: 315px;
-        height: 375px;
-        object-fit: cover;
-        margin-bottom: 30px;
-        border-radius: 12px;
-        @media screen and (min-width: 768px) {
-          max-width: 300px;
+  .container {
+    .employee {
+      @media screen and (min-width: 768px) {
+        display: flex;
+        flex-direction: row;
+        margin-top: 60px;
+      }
+
+
+      &__photo {
+        img {
+          max-width: 315px;
           width: 100%;
+          height: 375px;
+          object-fit: cover;
+          margin-bottom: 30px;
+          border-radius: 12px;
+          @media screen and (min-width: 768px) {
+            max-width: 300px;
+            width: 100%;
+          }
         }
       }
+
+      &__description {
+        h1 {
+          font-size: 38px;
+          margin-bottom: 15px;
+        }
+
+        p {
+          color: base.$grey-text;
+          font-size: 14px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 157.143%;
+          margin-bottom: 10px;
+
+          a {
+            color: base.$blue;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: normal;
+          }
+        }
+
+        @media screen and (min-width: 768px) {
+          margin: 116px 0 116px 30px;
+        }
+        @media screen and (min-width: 1024px) {
+          margin: 0 0 0 60px;
+        }
+      }
+
     }
 
-    &__description {
-      h1 {
-        margin-bottom: 15px;
-      }
-
-      p {
-        color: base.$grey-text;
-        font-size: 14px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 157.143%;
-        margin-bottom: 10px;
-
-        a {
-          color: base.$blue;
-          font-size: 16px;
-          font-weight: 400;
-          line-height: normal;
-        }
-      }
-
+    .bio {
       hr {
         height: 4px;
         background: base.$grey-separator;
         margin: 30px 0 30px;
       }
-      @media screen and (min-width: 768px) {
-        margin: 116px 0 116px 30px;
+
+      h3 {
+        color: base.$main-color;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin: 30px 0 15px;
+      }
+
+      p:nth-child(6) {
+        margin-bottom: 30px;
+        @media screen and (min-width: 768px) {
+          margin-bottom: 60px;
+        }
       }
     }
-  }
-  .bio {
-    
-    h3 {
-      color: base.$main-color;
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 700;
-      line-height: normal;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin: 30px 0 15px;
-    }
 
-    p:nth-child(5) {
-      margin-bottom: 30px;
-    }
+
   }
+
+
 }
 
 
